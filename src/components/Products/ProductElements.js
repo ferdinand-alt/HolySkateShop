@@ -1,6 +1,8 @@
 import styled from 'styled-components'
+import { motion } from "framer-motion";
+import { pageAnimation } from "../../animation";
 
-export const ProductsContainer = styled.div`
+export const ProductsContainer = styled(motion.div)`
   width: 100vw;
   min-height: 100vh;
   padding: 5rem calc((100vw - 1300px) / 2);
@@ -27,16 +29,18 @@ export const ProductImg = styled.img`
   max-width: 100%;
   overflow: hidden;
   border-radius: 3px;
-  box-shadow: 1px 2px 6px white;
+  box-shadow: 1px 2px 18px white;
 `;
 
 export const ProductsHeading = styled.h1`
-font-size: clamp(2.5rem, 2.5vw, 3rem);
-text-align: center;
-margin-bottom: 5rem;
-font-family: 'Monoton';
-letter-spacing: 3px;
-`
+  font-size: clamp(2.5rem, 2.5vw, 3rem);
+  text-align: center;
+  margin-bottom: 5rem;
+  font-weight: 300;
+  font-family: "Monoton";
+  letter-spacing: 3px;
+  text-shadow: 0px 5px 15px white;
+`;
 
 export const ProductTitle = styled.h2`
 font-weight: 400;
@@ -77,7 +81,7 @@ export const ProductButton = styled.button`
   transition: 0.2s ease;
   border: none;
   &:hover {
-    background: rebeccapurple;
+    box-shadow: 1px 0px 20px 5px white;
     transition: 0.2s ease;
     cursor: pointer;
   }

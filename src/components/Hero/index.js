@@ -1,33 +1,27 @@
-import React, {useState} from 'react'
-import NavBar from '../NavBar'
+import React from 'react'
 import {HeroContainer, HeroContent, HeroItems, HeroH1, HeroP, HeroBtn} from './HeroElements'
 import Sidebar from '../SideBar'
-// State
+import NavBar from "../NavBar";
+// FRAMER MOTION
+import { pageAnimation, titleAnim, photoAnim } from '../../animation'
 
-const Hero = () => {
-    const [isOpen, setIsOpen] = useState(false);
-    const toggle = () => {
-        setIsOpen(!isOpen)
-    }
+const Hero = ({toggle, isOpen}) => {
+
     return (
-        <HeroContainer>
-            <NavBar toggle={toggle}/>
-            <Sidebar isOpen={isOpen} toggle={toggle}/>
-            <HeroContent>
-                <HeroItems>
-                    <HeroH1>
-                        Welcome to our blessed Shop!
-                    </HeroH1>
-                    <HeroP>
-                        Skateboards send from above
-                    </HeroP>
-                    <HeroBtn>
-                        See Shop
-                    </HeroBtn>
-                </HeroItems>
-            </HeroContent>
-        </HeroContainer>
-    )
+      <HeroContainer variants={pageAnimation} initial="hidden" animate="show">
+        <NavBar toggle={toggle} />
+        <Sidebar isOpen={isOpen} toggle={toggle} />
+        <HeroContent>
+          <HeroItems>
+            <HeroH1 variants={titleAnim}>Welcome to our blessed Shop!</HeroH1>
+            <HeroP variants={titleAnim}>Skateboards send from above</HeroP>
+            <HeroBtn variants={titleAnim} to="/decks">
+              See Decks
+            </HeroBtn>
+          </HeroItems>
+        </HeroContent>
+      </HeroContainer>
+    );
 }
 
 export default Hero

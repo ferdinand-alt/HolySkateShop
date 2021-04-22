@@ -38,9 +38,9 @@ export const NavIcon = styled.div`
   text-transform: uppercase;
   text-shadow: 0px 5px 15px white;
   p {
-    transform: translate(-170%, 180%);
+    transform: translate(-60%, 300%);
     font-weight: bold;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
   }
 `;
 
@@ -52,4 +52,8 @@ export const Bars = styled.div`
   transform: translate(-50%, -10%);
   -webkit-filter: drop-shadow(5px 5px 5px white);
   filter: drop-shadow(5px 5px 5px white);
+  &:hover {
+    -webkit-filter: drop-shadow(5px 5px 5px white);
+    filter: drop-shadow(5px 4px 4px white);
+  }
 `;
