@@ -1,4 +1,6 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
+import Sidebar from "../SideBar";
+import NavBar from "../NavBar";
 import {
   StyledFormWrapper,
   StyledForm,
@@ -6,7 +8,9 @@ import {
   StyledTextArea,
   StyledButton,
   StyledError,
+  FormContainer,
 } from "./FormElements";
+import { pageAnimation } from "../../animation";
 
 const initialState = {
     name: '',
@@ -14,27 +18,29 @@ const initialState = {
     message: '',
 }
 
-const Contact = () => {
-    const [state, setState] = useState(initialState);
-    const [error, setError] = useState('');
+const Contact = ({ toggle, isOpen }) => {
+  const [state, setState] = useState(initialState);
+  const [error, setError] = useState("");
 
-    const handleSubmit = e => {
-        e.preventDefault();
-        for (let key in state) {
-            if (state[key] === '') {
-                setError(`You must provide the ${key}`)
-            }
-        }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    for (let key in state) {
+      if (state[key] === "") {
+        setError(`You must provide the ${key}`);
+      }
     }
+  };
 
-    const handleInput = e => {
-        const inputName = e.currentTarget.name
-        const value = e.currentTarget.value
-        setState(prev => ({...prev, [inputName]: value }))
-    }
+  const handleInput = (e) => {
+    const inputName = e.currentTarget.name;
+    const value = e.currentTarget.value;
+    setState((prev) => ({ ...prev, [inputName]: value }));
+  };
   return (
-    <>
-      <StyledFormWrapper>
+    <FormContainer variants={pageAnimation} isOpen={isOpen} toggle={toggle}>
+      <NavBar toggle={toggle} />
+      <Sidebar isOpen={isOpen} toggle={toggle} />
+      <StyledFormWrapper variants={pageAnimation}>
         <StyledForm onSubmit={handleSubmit}>
           <h2>Contact Form</h2>
           <label htmlFor="name">Name</label>
@@ -65,7 +71,7 @@ const Contact = () => {
           <StyledButton type="submit">Send Message</StyledButton>
         </StyledForm>
       </StyledFormWrapper>
-    </>
+    </FormContainer>
   );
 };
 

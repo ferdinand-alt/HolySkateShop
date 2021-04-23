@@ -3,17 +3,24 @@ import {HeroContainer, HeroContent, HeroItems, HeroH1, HeroP, HeroBtn} from './H
 import Sidebar from '../SideBar'
 import NavBar from "../NavBar";
 // FRAMER MOTION
-import { pageAnimation, titleAnim, photoAnim } from '../../animation'
+import { pageAnimation, titleAnim } from '../../animation'
 
 const Hero = ({toggle, isOpen}) => {
 
     return (
-      <HeroContainer variants={pageAnimation} initial="hidden" animate="show">
+      <HeroContainer
+        variants={pageAnimation}
+        initial="hidden"
+        animate="show"
+        isOpen={isOpen}
+      >
         <NavBar toggle={toggle} />
         <Sidebar isOpen={isOpen} toggle={toggle} />
         <HeroContent>
           <HeroItems>
-            <HeroH1 variants={titleAnim}>Welcome to our blessed Shop!</HeroH1>
+            <HeroH1 isOpen={isOpen} toggle={toggle} variants={titleAnim}>
+              Welcome to our blessed Shop!
+            </HeroH1>
             <HeroP variants={titleAnim}>Skateboards send from above</HeroP>
             <HeroBtn variants={titleAnim} to="/decks">
               See Decks

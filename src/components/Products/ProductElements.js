@@ -1,13 +1,13 @@
 import styled from 'styled-components'
 import { motion } from "framer-motion";
-import { pageAnimation } from "../../animation";
 
 export const ProductsContainer = styled(motion.div)`
-  width: 100vw;
+  margin-right: ${({ isOpen }) => (isOpen ? "25%" : "")}; 
   min-height: 100vh;
   padding: 5rem calc((100vw - 1300px) / 2);
   color: white;
   background-color: black;
+  transition: 1s ease-out;
 `;
 
 export const ProductWrapper = styled.div`

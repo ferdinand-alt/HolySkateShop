@@ -1,4 +1,14 @@
 import styled from 'styled-components'
+import {motion} from 'framer-motion'
+
+export const FormContainer = styled(motion.div)`
+  margin-right: ${({ isOpen }) => (isOpen ? "25%" : "")};
+  min-height: 100vh;
+  padding: 5rem calc((100vw - 1300px) / 2);
+  color: white;
+  background-color: black;
+  transition: 1s ease-out;
+`;
 
 export const StyledFormWrapper = styled.div`
   background-color: black;
@@ -16,6 +26,7 @@ export const StyledForm = styled.form`
   background-color: #fff;
   border-radius: 10px;
   display: flex;
+  color: black;
   flex-direction: column;
   box-shadow: 1px 2px 26px white;
   border-radius: 5px;

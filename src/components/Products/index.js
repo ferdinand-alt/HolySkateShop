@@ -22,6 +22,7 @@ export const Products = ({heading, data, toggle, isOpen}) => {
         variants={pageAnimation}
         initial="hidden"
         animate="show"
+        isOpen={isOpen}
       >
         <NavBar toggle={toggle} />
         <Sidebar isOpen={isOpen} toggle={toggle} />

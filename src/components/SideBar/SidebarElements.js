@@ -16,9 +16,9 @@ export const SidebarContainer = styled.aside`
   display: grid;
   align-items: center;
   top: 0;
-  transition: 0.9s ease-in;
+  transition: 1s ease-in-out;
   box-shadow: -10px 0px 20px 5px white;
-  right: ${({ isOpen }) => (isOpen ? "0" : "-1000px")};
+  right: ${({ isOpen }) => (isOpen ? "0" : "-400px")};
   @media screen and (max-width: 400px) {
     width: 100%;
   }

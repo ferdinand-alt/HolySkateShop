@@ -4,38 +4,38 @@ import { motion } from 'framer-motion'
 import { Link } from "react-router-dom";
 
 export const HeroContainer = styled(motion.div)`
-  background: linear-gradient(rgba(0, 0, 0, 0.5),
-   rgba(226, 106, 106, 0.4)),
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url(${ImgBg});
   background-position: left;
   background-size: cover;
   height: 100vh;
+  margin-right: ${({ isOpen }) => (isOpen ? "10%" : "")};
+  transition: 1.2s ease-in-out;
 `;
 
 export const HeroContent = styled.div`
-height: calc(100vh - 80px);
-max-height: 100%;
-width: 100vw;
-padding: 0rem calc((100vw - 1300px) / 2);
-`
+  height: calc(100vh - 80px);
+  max-height: 100%;
+  padding: 0rem calc((100vw - 1300px) / 2);
+`;
 
 export const HeroItems = styled.div`
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: flex-start;
-height: 100vh;
-max-height: 100%;
-padding: 0 2rem;
-width: 650px;
-color: #fff;
-text-transform: uppercase;
-line-height: 1;
-font-weight: bold;
-@media screen and (max-width: 650px){
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+  max-height: 100%;
+  padding: 0 2rem;
+  width: 650px;
+  color: #fff;
+  text-transform: uppercase;
+  line-height: 1;
+  font-weight: bold;
+  @media screen and (max-width: 650px) {
     width: 100%;
-}
-`
+  }
+`;
 export const HeroH1 = styled(motion.h1)`
   font-size: clamp(2rem, 10vw, 5rem);
   margin-bottom: 1rem;
@@ -44,6 +44,8 @@ export const HeroH1 = styled(motion.h1)`
   box-shadow: 5px 13px 6px #d4af37;
   letter-spacing: 3px;
   text-shadow: 0px 5px 15px white;
+  transition: 1.2s ease-in-out;
+  margin-right: ${({ isOpen }) => (isOpen ? "10%" : "")};
 `;
 export const HeroP = styled(motion.p)`
   font-size: clamp(2rem, 2.5vw, 3rem);

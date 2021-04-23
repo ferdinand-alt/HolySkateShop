@@ -40,7 +40,8 @@ function App() {
           <Feature />
         </Route>
         <Route exact path="/contact">
-          <Contact />
+          <Contact isOpen={isOpen} toggle={toggle} />
+          <Feature />
         </Route>
       </Switch>
       <Footer />

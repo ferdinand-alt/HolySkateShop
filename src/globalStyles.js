@@ -7,4 +7,8 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     font-family: 'Source Code Pro', monospace;
 }
+html {
+    background-color: black;
+}
 `;
+
